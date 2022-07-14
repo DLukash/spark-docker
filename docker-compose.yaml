@@ -33,3 +33,4 @@ services:
     volumes:
       # - ./conf/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
       - ./books:/home/books
+      - ./worker-logs:/opt/bitnami/spark/work
