@@ -1,18 +1,38 @@
 version: '2'
 
 services:
+  jupiter-notebook:
+    build: './jupiter-notebook/'
+    # image: jupyter/pyspark-notebook
+    restart: always
+    container_name: jupiter-notebook
+    user: root
+    ports:
+      - 8888:8888
+      - 4040:4040
+    environment:
+      - PASSWORD=my-password
+      - JUPYTER_TOKEN="easy"
+      - GRANT_SUDO=yes
+    command: 'start-notebook.sh'
+    volumes:
+      - ./notebooks:/home/jovyan/work
+  
   spark:
     image: docker.io/bitnami/spark:3.3
+    container_name: spark-master
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
+    # expose:
+    #   - '7077'
     ports:
       - '8080:8080'
       - '7077:7077'
-      - '51810:51810'
+      # - '51810:51810'
     volumes:
       # - ./conf/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
       - ./books:/home/books
@@ -28,8 +48,8 @@ services:
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
-    ports:
-      - '8081:8081'
+    # ports:
+    #   - '8081:8081'
     # volumes:
     #   - ./conf/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
     #   - ./books:/home/books
