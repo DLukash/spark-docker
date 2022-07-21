@@ -13,8 +13,6 @@ services:
     environment:
       - PASSWORD=my-password
       - JUPYTER_TOKEN=easy
-      # - GRANT_SUDO=yes
-    command: 'start-notebook.sh'
     volumes:
       - ./notebooks:/home/jovyan/work
       - ./data:/opt/bitnami/spark/temp:ro
