@@ -9,3 +9,5 @@ jupiter-notebook/venv36/
 
 *.csv
 *.geojson
+
+.env

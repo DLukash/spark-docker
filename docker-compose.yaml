@@ -3,16 +3,13 @@ version: '2'
 services:
   jupiter-notebook:
     build: './jupiter-notebook/'
-    # image: jupyter/pyspark-notebook
     restart: always
     container_name: jupiter-notebook
-    # user: root
     ports:
       - 8888:8888
       - 4040:4040
-    environment:
-      - PASSWORD=my-password
-      - JUPYTER_TOKEN=easy
+    env_file:
+      - .env
     volumes:
       - ./notebooks:/home/jovyan/work
       - ./data:/opt/bitnami/spark/temp:ro

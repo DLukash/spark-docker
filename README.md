@@ -25,9 +25,12 @@ conda create -p jupiter-notebook/venv36 --file requirements.txt
 Additionally need to activate kernel for Jupiter notebook from container's shell
 
 ```
-conda activate /opt/conda/envs/venv36
+conda activate /opt/conda/envs/venv36 && \
 python -m ipykernel install --user --name=venv36
 ```
 
-
+To run Apache Spark cluster with 5 standalone workers
+```
+docker-compose up -d --build --scale spark-worker=5
+```
 
