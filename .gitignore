@@ -1,7 +1,11 @@
 .vscode/
 books/
 venv/
-notebooks/
-*.ipynb
+notebooks/.ipynb_checkpoints/
 spark-3.3.0-bin-hadoop3/
 docker-compose-notebook.yaml
+
+jupiter-notebook/venv36/
+
+*.csv
+*.geojson
