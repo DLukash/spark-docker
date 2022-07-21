@@ -1,6 +1,6 @@
 # spark-docker
 
-Working Apache Spark cluster with Jupiter Notebook that can serve as a driver.
+Working Apache Spark standalone cluster with Jupiter Notebook as a driver.
 
 Jupiter Notebook 
 
