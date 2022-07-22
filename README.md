@@ -1,4 +1,4 @@
-# spark-docker
+# Apache Spark standalone cluster with spatial analysis capabilities
 
 Working Apache Spark standalone cluster with Jupiter Notebook as a driver.
 
@@ -30,4 +30,22 @@ US States borders spatial data URL is
 
 ```
 https://github.com/datasets/geo-admin1-us/blob/master/data/admin1-us.geojson
+```
+
+Jupiter notebook:
+
+```
+localhost:8888
+```
+
+Apache Spark master UI:
+
+```
+localhost:8080
+```
+
+Apache Spark driver UI:
+
+```
+localhost:4040
 ```
