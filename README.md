@@ -2,6 +2,10 @@
 
 Working Apache Spark standalone cluster with Jupiter Notebook as a driver.
 
+Dataset to work on
+Description:https://opensky-network.org/datasets/states/README.txt
+Datasource:https://opensky-network.org/datasets/states/
+
 Jupiter Notebook 
 
 Password:
