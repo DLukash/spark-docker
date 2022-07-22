@@ -13,7 +13,7 @@ services:
     volumes:
       - ./notebooks:/home/jovyan/work
       - ./data:/opt/bitnami/spark/temp:ro
-  
+
   spark:
     image: docker.io/bitnami/spark:3.0.2
     container_name: spark-master
